@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> id </th>
+        <th> app_label </th>
+        <th> model </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in usrs %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.app_label }}</td>
+        <td>{{ user.model }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
