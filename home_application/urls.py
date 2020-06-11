@@ -18,7 +18,9 @@ from django.conf.urls import url
 from home_application import views
 
 urlpatterns = (
-#    url(r'^$', views.hello),
+    url(r'^$', views.hello),
     url(r'^$', views.home),
     url(r'^contact/$', views.contact),
+    url(r'^listinfo/$', views.listinfo),
+    url(r'^zabbix/$', views.hello),
 )
