@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hosts Info</title>
+    </head>
+    <body>
+        <p>Data服务器信息</p>
+        {% for inf in info.data %}
+        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_host_innerip}},{{inf.bk_group}}</p>
+        {% endfor %}
+
+        <p>Server服务器信息</p>
+        {% for inf in info.server %}
+        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_host_innerip}},{{inf.bk_group}}</p>
+        {% endfor %}
+
+        <p>Infra服务器信息</p>
+        {% for inf in info.infra %}
+        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_host_innerip}},{{inf.bk_group}}</p>
+        {% endfor %}
+
+        <p>None group信息</p>
+        {% for inf in info.none %}
+        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_host_innerip}},{{inf.bk_group}}</p>
+        {% endfor %}
+    </body>
+</html>

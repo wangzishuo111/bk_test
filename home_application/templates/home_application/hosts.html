@@ -1,0 +1,12 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hosts Info</title>
+    </head>
+    <body>
+        <p>hosts信息</p>
+        {% for inf in info %}
+        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_host_innerip}},{{inf.bk_group}}</p>
+        {% endfor %}
+    </body>
+</html>

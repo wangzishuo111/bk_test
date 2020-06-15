@@ -1,0 +1,19 @@
+<!--
+<h4>
+   {{ info.name }}
+   {{ info.year }}
+</h4>
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload Successfully</title>
+    </head>
+    <body>
+        <p>学校信息</p>
+        {% for inf in info %}
+        <p>{{inf.name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.year}}</p>
+        <br>
+        {% endfor %}
+    </body>
+</html>
