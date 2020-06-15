@@ -33,6 +33,14 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
     },
+    'cmdb_db': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_content_type',
+        'USER': 'root',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
 }
 
 # 多人开发时，无法共享的本地配置可以放到新建的 local_settings.py 文件中
