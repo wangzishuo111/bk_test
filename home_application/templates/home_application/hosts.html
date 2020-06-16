@@ -4,9 +4,26 @@
         <title>Hosts Info</title>
     </head>
     <body>
-        <p>hosts信息</p>
+        <center>
+        <h1>hosts信息</h1><br>
+        <table border="1", width="70%">
+        <tr>
+        <td width="25%">服务器名</td>
+        <td width="25%">ip</td>
+        <td width="20%">归属组</td>
+        <td width="15%">类型</td>
+        <td width="10%">厂商</td>
+        </tr>
         {% for inf in info %}
-        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_host_innerip}},{{inf.bk_group}}</p>
+        <tr>
+        <td>{{inf.bk_host_name}}</td>
+        <td>{{inf.bk_host_innerip}}</td>
+        <td>{{inf.bk_group}}</td>
+        <td>{{inf.bk_type}}</td>
+        <td>{{inf.cloud_firm}}</td>
+        </tr>
         {% endfor %}
+        </table>
+        </center>
     </body>
 </html>

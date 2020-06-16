@@ -4,24 +4,30 @@
         <title>Hosts Info</title>
     </head>
     <body>
-        <p>Data服务器信息</p>
-        {% for inf in info.data %}
-        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_type}}</p>
+        <center>
+        {% for key, value in info.items %}
+        <h3>{{key}}</h3>
+            <table border="1", width="70%">
+                <tr>
+                    <td width="25%">服务器名</td>
+                    <td width="25%">ip</td>
+                    <td width="20%">归属组</td>
+                    <td width="15%">类型</td>
+                    <td width="10%">厂商</td>
+                </tr>
+                {% for inf in value %}
+                    <tr>
+                        <td width="25%">{{inf.bk_host_name}}</td>
+                        <td width="25%">{{inf.bk_host_innerip}}</td>
+                        <td width="20%">{{inf.bk_group}}</td>
+                        <td width="15%">{{inf.bk_type}}</td>
+                        <td width="10%">{{inf.cloud_firm}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
         {% endfor %}
-
-        <p>Server服务器信息</p>
-        {% for inf in info.server %}
-        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_type}}</p>
-        {% endfor %}
-
-        <p>Infra服务器信息</p>
-        {% for inf in info.infra %}
-        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_type}}</p>
-        {% endfor %}
-
-        <p>None group信息</p>
-        {% for inf in info.none %}
-        <p>{{inf.bk_host_name}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{inf.bk_type}}</p>
-        {% endfor %}
+        </center>
+        
     </body>
 </html>
+
