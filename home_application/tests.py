@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
-# from django.test import TestCase
 
-# Create your tests here.
 
 from mongo import MongodbClient
+import collections
 
 con = MongodbClient('10.0.11.148', 27017, 'cmdb', 'cc_HostBase','root', 'eVmA_GTjy6FYJh5HbelU')
 hosts_info = con.get_all('cc_HostBase')
+
+info = []
+
 for host_info in hosts_info:
-    print (host_info.get('bk_host_name'), host_info.get('bk_host_innerip'), host_info.get('bk_group'))
+    info.append((host_info.get("bk_group"), host_info.get("bk_type")))
+
+d = collections.defaultdict(list)
+for k, v in info:
+    d[k].append(v)
+
+group_info = dict(d.items())
+for k, v in group_info.items():
+    group_info[k] = collections.Counter(v)
+
+for k, v in group_info.items():
+    print (k)
+    print (v)
