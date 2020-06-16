@@ -13,7 +13,7 @@
 {% block content %}
 	<div>
 		<h3>
-            说明<br><small>GrowingIo服务器资产概览。资产明细中是所有的资产信息，资产分组中是每组的服务器列表</small>
+            说明<br><small>整理GrowingIo资产。资产明细中是所有的资产信息，资产分组中是每组的服务器列表</small>
                {% for key, value in info.items %}
                <h1>{{key}}</h1>
                     <table border="1", width="10%">
@@ -27,7 +27,6 @@
                     <td width="30%">{{v}}</td>
                     </tr>
                     {% endfor %}
-                    </table>
                {% endfor %}
         </h3>
 	</div>
