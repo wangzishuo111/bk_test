@@ -41,5 +41,5 @@ class MongodbClient(object):
 
 
 
-if __name__ == '__main__':
-    db = MongodbClient('10.0.11.148', 27017, 'cmdb', 'cc_HostBase','root', 'eVmA_GTjy6FYJh5HbelU')
+#if __name__ == '__main__':
+#    db = MongodbClient('10.0.11.148', 27017, 'cmdb', 'cc_HostBase','root', 'eVmA_GTjy6FYJh5HbelU')
