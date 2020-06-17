@@ -1,10 +1,11 @@
 from home_application.mongo import MongodbClient 
 import collections
 
+
 con = MongodbClient('10.0.11.148', 27017, 'cmdb', 'cc_HostBase','root', 'eVmA_GTjy6FYJh5HbelU')
-hosts_info = con.get_all('cc_HostBase')
 
 def group_hosts():
+    hosts_info = con.get_all('cc_HostBase')
     dic = {}
     data = [info for info in hosts_info if info.get('bk_group')== 'Data']
     server = [info for info in hosts_info if info.get('bk_group')== 'Server']
@@ -17,9 +18,11 @@ def group_hosts():
     return dic
 
 def all_hosts():
+    hosts_info = con.get_all('cc_HostBase')
     return hosts_info
     
 def overview():
+    hosts_info = con.get_all('cc_HostBase')
     info = []
     for host_info in hosts_info:
         info.append((host_info.get("bk_group"), host_info.get("bk_type")))
