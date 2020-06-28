@@ -6,14 +6,14 @@
 {% endblock %}
 
 {% block navigation %}
-	<li class="king-navbar-active"><a href="{{ SITE_URL }}hosts"><span>资产详细</span></a></li>
+	<li class="king-navbar-active"><a href="{{ SITE_URL }}chart"><span>资源使用</span></a></li>
 	<li class=""><a href="{{ SITE_URL }}hosts2/"><span>资产分组</span></a></li>
 {% endblock %}
 
 {% block content %}
 	<div>
 		<h3>
-            说明<br><small>GrowingIo服务器资产概览。资产明细中是所有的资产信息，资产分组中是每组的服务器列表</small>
+            说明<br><small>GrowingIo服务器资产概览。资源使用中是各组cpu，内存使用情况，资产分组中是每组的服务器列表</small>
                {% for key, value in info.items %}
                <h1>{{key}}</h1>
                     <table border="1", width="10%">

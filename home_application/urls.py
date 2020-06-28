@@ -21,6 +21,7 @@ urlpatterns = (
     url(r'^$', views.home),
     url(r'^contact/$', views.contact),
     url(r'^info/$', views.info),
+    url(r'^chart/$', views.chart),
     url(r'^hosts/$', views.hosts),
     url(r'^hosts2/$', views.hosts2),
 )

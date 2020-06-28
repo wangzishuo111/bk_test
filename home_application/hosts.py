@@ -11,9 +11,16 @@ def group_hosts():
     server = [info for info in hosts_info if info.get('bk_group')== 'Server']
     none = [info for info in hosts_info if info.get('bk_group')== None]
     infra = [info for info in hosts_info if info.get('bk_group')== 'Infrastructure']
+    qa = [info for info in hosts_info if info.get('bk_group')== 'QA']
+    cdp = [info for info in hosts_info if info.get('bk_group')== 'CDP']
+    it = [info for info in hosts_info if info.get('bk_group')== 'IT']
+    adstrack = [info for info in hosts_info if info.get('bk_group')== 'AdsTrack']
     dic['data'] = data
     dic['server'] = server
     dic['infra'] = infra
+    dic['qa'] = qa
+    dic['cdp'] = cdp
+    dic['it'] = it
     dic['none'] = none
     return dic
 
@@ -36,3 +43,29 @@ def overview():
         group_info[k] = dict(collections.Counter(v))
 
     return group_info
+
+def resource():
+    hosts_info = con.get_all('cc_HostBase')
+    info_cpu = []
+    info_mem = []
+    ret_cpu = []
+    ret_mem = []
+    for host_info in hosts_info:
+        info_cpu.append((host_info.get("bk_group"), host_info.get("bk_cpu")))
+        info_mem.append((host_info.get("bk_group"), host_info.get("bk_mem")))
+
+    d = collections.defaultdict(list)
+    for k, v in info_cpu:
+        d[k].append(v)
+    group_cpu = dict(d.items())
+    for k, v in group_cpu.items():
+        ret_cpu.append((k,sum(v)))
+
+    x = collections.defaultdict(list)
+    for k, v in info_mem:
+        x[k].append(v)
+    group_mem = dict(x.items())
+    for k, v in group_mem.items():
+        ret_mem.append((k,sum(v)))
+
+    return ret_cpu, ret_mem
